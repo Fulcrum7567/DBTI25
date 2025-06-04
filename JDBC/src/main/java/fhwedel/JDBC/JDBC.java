@@ -2,6 +2,7 @@ package fhwedel.JDBC;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
@@ -13,13 +14,30 @@ public class JDBC {
 
     private Connection connection;
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
         JDBC obj = new JDBC();
         obj.connect();
         System.out.println(obj.getConnection());
 
+        //obj.createPersonal();
+
         obj.readPersonal();
+
+        //obj.updatePersonal();
+
+        //obj.deletePersonal();
+
+        obj.readPersonal();
+
+        obj.getVerkaufsPersonal();
     }
+
+
+
+
+
+
+
 
     public Connection getConnection() {
         return this.connection;
@@ -81,6 +99,17 @@ public class JDBC {
         }
     }
 
+    
+
+    public void createPersonal() {
+        try {
+            ResultSet rs = this.connection.createStatement().executeQuery("INSERT INTO personal VALUES (417, 'Krause', 'Henrik', 'it1', 'd13', 'tkk');");
+            printResultSetTable(rs);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     public void readPersonal() {
         if (this.connection == null) {
             System.out.println("Not connected!");
@@ -98,8 +127,29 @@ public class JDBC {
 
     }
 
-    public void createPersonal() {
-        
+    public void updatePersonal() throws SQLException {
+        Integer betrag = null; 
+        ResultSet rs = this.connection.createStatement().executeQuery("SELECT betrag FROM gehalt WHERE geh_stufe = 'it1';");
+        if (rs.next()) {
+            betrag = rs.getInt("betrag");
+        }
+
+        if (betrag != null) {
+            PreparedStatement ps = this.connection.prepareStatement("UPDATE gehalt SET betrag = ? WHERE geh_stufe = 'it1';");
+            ps.setInt(1, (int)(betrag*1.1));
+            ps.executeUpdate();
+        }
+    }
+
+    public void deletePersonal() throws SQLException {
+        ResultSet rs = this.connection.createStatement().executeQuery("DELETE FROM personal WHERE vorname='Lutz' AND name = 'Tietze'");
+    }
+
+    public void getVerkaufsPersonal() throws SQLException {
+        ResultSet rs = this.connection.createStatement().executeQuery(
+        "SELECT * FROM personal AS p JOIN abteilung AS a ON a.abt_nr = p.abt_nr WHERE a.abt_nr = 'd15'"
+        );
+        printResultSetTable(rs);
     }
 
     
