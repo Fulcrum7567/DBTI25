@@ -1,0 +1,27 @@
+[
+    {
+        "LNR": 36517836,
+        "NAME": "Luke Skywalker",
+        "ADRESSE": "Tatooine"
+    },
+    {
+        "LNR": 81298364,
+        "NAME": "Anakin Skywalker",
+        "ADRESSE": "Coruscant"
+    },
+    {
+        "LNR": 98721531,
+        "NAME": "Leia Organa",
+        "ADRESSE": "Alderaan"
+    },
+    {
+        "LNR": 823239851,
+        "NAME": "Han Solo",
+        "ADRESSE": "Millennium Falcon"
+    },
+    {
+        "LNR": 901238468,
+        "NAME": "Chewbacca",
+        "ADRESSE": "Kashyyyk"
+    }
+]

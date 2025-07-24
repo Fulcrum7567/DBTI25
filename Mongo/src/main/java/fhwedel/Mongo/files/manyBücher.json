@@ -1,0 +1,38 @@
+[
+    {
+        "INVNR": 9863113,
+        "AUTOR": "J.K. Rowling",
+        "TITEL": "Harry Potter und der Stein der Weisen",
+        "VERLAG": "Carlsen Verlag"
+    },
+    {
+        "INVNR": 9863114,
+        "AUTOR": "J.K. Rowling",
+        "TITEL": "Harry Potter und die Kammer des Schreckens",
+        "VERLAG": "Carlsen Verlag"
+    },
+    {
+        "INVNR": 9863115,
+        "AUTOR": "J.K. Rowling",
+        "TITEL": "Harry Potter und der Gefangene von Askaban",
+        "VERLAG": "Carlsen Verlag"
+    },
+    {
+        "INVNR": 9863116,
+        "AUTOR": "J.K. Rowling",
+        "TITEL": "Harry Potter und der Feuerkelch",
+        "VERLAG": "Carlsen Verlag"
+    },
+    {
+        "INVNR": 9863117,
+        "AUTOR": "J.K. Rowling",
+        "TITEL": "Harry Potter und der Orden des Phönix",
+        "VERLAG": "Carlsen Verlag"
+    },
+    {
+        "INVNR": 9863118,
+        "AUTOR": "J.K. Rowling",
+        "TITEL": "Harry Potter und der Halbblutprinz",
+        "VERLAG": "Carlsen Verlag"
+    }
+]

@@ -1,0 +1,1 @@
+const ausleihe = Array.from(db.leser.findOne({LNR: 9237279374}).ENTLIEHEN).filter((o) => o.INVNR !== "9783548609420")
