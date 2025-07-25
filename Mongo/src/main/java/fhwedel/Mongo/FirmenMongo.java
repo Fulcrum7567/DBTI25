@@ -50,7 +50,7 @@ public class FirmenMongo {
     }
 
 
-    private MongoClient mongoClient = MongoClients.create(
+    public MongoClient mongoClient = MongoClients.create(
             MongoClientSettings.builder().applyConnectionString(
                 new ConnectionString("mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000")
             ).build()
@@ -230,6 +230,7 @@ public class FirmenMongo {
                     .append("vorname", personalResultSet.getString("vorname"))
                     .append("krankenkasse", personalResultSet.getString("krankenkasse"))
                     .append("abteilung", abteilungResultSet.next() ? abteilungResultSet.getString("name") : null)
+                    .append("gehalt", personalResultSet.getString("geh_stufe"))
                     .append("praemien", praemieList);
 
                 System.out.println("Importing personal: " + personalDoc.toJson());

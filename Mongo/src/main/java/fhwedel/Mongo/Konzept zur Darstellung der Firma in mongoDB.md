@@ -54,6 +54,7 @@ Eine Prämie ist eine Liste von Beträgen, die einem Mitarbeiter zugeordnet sind
 #### Personal
 - String abteilung
 - Int[] praemien
+- String gehalt ↑
 - Int pnr
 - String name
 - String vorname
